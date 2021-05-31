@@ -10,8 +10,12 @@ html {
 
 .main {
     padding: 2rem;
+    margin: 1rem;
+    border: 2rem solid $dark-gray;
+    display: grid;
+    grid-template-columns: 35% 65%;
 }
 
 h1 {
-    color: $red;  
+    color: #white;
 }

@@ -4,3 +4,33 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+.identity {
+  grid-column: 1 / span 1;
+}
+
+.info {
+  grid-column: 2 / span 1;
+  background-color: $gray;
+  margin-left: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.name-position {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+h1, h3, p {
+  color: $charcoal;
+}
+
+img {
+  &.headshot {
+    border-radius: 50%;
+    width: 100%;
+  }
+}
