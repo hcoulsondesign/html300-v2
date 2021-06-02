@@ -1,6 +1,6 @@
 // Import partials here
-@import 'base.normalize';
 @import 'settings.variables';
+@import 'base.normalize';
 @import 'settings.responsive';
 @import 'components.content';
 
@@ -22,6 +22,9 @@ h1, h3, p, a {
   }
   & h1 {
     margin: 1rem 0 0.25rem 0;
+    &:hover {
+      color: lighten($dark-gray, 3%);
+    }
   }
   & h3 {
     margin: 0;
