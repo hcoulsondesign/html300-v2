@@ -4,35 +4,65 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+@include media-query(mobile) {
+  .identity {
+    //grid-row: 1 / span 1;
+    & img {
+      border-radius: 50%;
+      width: 50%;
+      float: left;
+      margin: 0 0.5rem 2rem 0;
+    }
+    & div.name-position {
+      font-size: 80%;
+    }
+  }
+  .info {
+    clear: both;
+    padding: 1rem;
+    font-size: 70%;
+    & p {
+      margin: 0.25rem;
+    }
+    & img {
+      width: 8%;
+    }
+  }
+}
+
+@include media-query(tab) {
+
+  .identity {
+    grid-column: 1 / span 1;
+    margin-bottom: 1rem;
+    & img {
+      border-radius: 50%;
+      width: 100%;
+    }
+    & div.name-position {
+      clear: both;
+      width: 80%;
+      margin: 1rem auto;
+    }
+    & h3 {
+      font-size: 140%;
+    }
+  }
+  .info {
+    grid-column: 2 / span 1;
+    margin-left: 1.5rem;
+    padding: 2rem;
+    justify-content: space-between;
+  }
+}
 
 h1, h3, p, a {
   color: $charcoal;
 }
 
 .identity {
-  @include media-query(mobile) {
-    grid-row: 1 / span 1;
-    & img {
-      border-radius: 50%;
-      width: 40%;
-      float: left;
-    }
-  }
-  @include media-query(tab) {
-    grid-column: 1 / span 1;
-    & img {
-      border-radius: 50%;
-      width: 100%;
-    }
-  }
-  // & img {
-  //   border-radius: 50%;
-  //   width: 100%;
-  // }
   & div.name-position {
-    width: 80%;
-    margin: 1rem auto;
-    text-align: center;
+  text-align: center;
   }
   & h1 {
     margin: 1rem 0 0.25rem 0;
@@ -42,36 +72,18 @@ h1, h3, p, a {
   }
   & h3 {
     margin: 0;
-    font-size: 140%;
     font-weight: lighter;
     font-style: italic;
   }
 }
 
 .info {
-  @include media-query(mobile) {
-    grid-row: 2 / span 1;
-    padding: 1rem;
-    font-size: 75%;
-    & p {
-      margin: 0.25rem;
-    }
-  }
-  @include media-query(tab) {
-    grid-column: 2 / span 1;
-    padding: 2rem;
-    & p {
-      margin: 0;
-    }
-  }
   background-color: $gray;
-  margin-left: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   & p {
     font-weight: lighter;
-    //margin: 0;
   }
   & span.spanstyle {
     font-weight: bold;
