@@ -5,6 +5,7 @@ const carsJSON = '[{"make":"Ford","model":"Mustang","year":2010,"color":"black"}
 const cars = JSON.parse(carsJSON)
 
 const container = document.querySelector('#list-container')
+console.log(container)
 
 cars.forEach(function(el){
   let list = document.createElement('ul')

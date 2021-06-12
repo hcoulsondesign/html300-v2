@@ -55,4 +55,29 @@ const cardsJSON = '[
 
  const cards = JSON.parse(cardsJSON)
 
- 
+const directory = document.querySelector('.template-hook')
+
+ cards.forEach(function(el){
+   let entry = document.createElement('article')
+   entry.innerHTML = `
+     <div class="identity">
+         <img src="img/headshot.jpg" class="headshot" alt="Headshot of a handsome white lab mix wearing a bowtie">
+         <div class="name-position">
+           <h1>${el.name}</h1>
+           <h3>${el.jobTitle}</h3>
+         </div>
+       </div>
+       <div class="info">
+         <p><span class="spanstyle">${company}:</span> Web Weavers</p>
+         <p><span class="spanstyle">${experience}:</span> 3 years</p>
+         <p><span class="spanstyle">${school}:</span> University of Washington</p>
+         <p><span class="spanstyle">${major}:</span> Marketing</p>
+         <p><span class="spanstyle">${email}:</span> paolo@example.com</p>
+         <div class="social-link">
+           <img src="/img/linkedin.svg" alt="linkedIn logo">
+           <a href=#>${linkedInUrl}</a>
+         </div>
+       </div>
+   `
+   directory.append(entry)
+ })
