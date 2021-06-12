@@ -30,7 +30,7 @@
   }
 }
 
-@include media-query(small) {
+@include media-query(small) { //takes over once screen width <400px
   .identity {
     margin: auto;
     & img {
