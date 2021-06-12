@@ -9,7 +9,7 @@
     //grid-row: 1 / span 1;
     & img {
       border-radius: 50%;
-      width: 50%;
+      width: 40%;
       float: left;
       margin: 0 0.5rem 2rem 0;
     }
@@ -26,6 +26,22 @@
     }
     & img {
       width: 8%;
+    }
+  }
+}
+
+@include media-query(small) {
+  .identity {
+    margin: auto;
+    & img {
+      border-radius: 50%;
+      width: 80%;
+      clear: both;
+      margin: 0 10% 0.5rem 10%;
+    }
+    & div.name-position {
+      font-size: 65%;
+      margin: 1rem auto;
     }
   }
 }

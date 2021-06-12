@@ -55,7 +55,7 @@ const cardsJSON = '[{"name":"Paolo Maldini","jobTitle": "Front End Developer","c
 
 const cards = JSON.parse(cardsJSON)
 
-const dir = document.querySelector('#card-list')
+const dir = document.querySelector('.template-hook')
 console.log(dir)
 
 cards.forEach(function(el){
