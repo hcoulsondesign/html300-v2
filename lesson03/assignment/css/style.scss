@@ -1,6 +1,85 @@
 // Import partials here
-@import 'base.normalize';
 @import 'settings.variables';
+@import 'base.normalize';
 @import 'settings.responsive';
 @import 'components.content';
 
+
+h1, h3, p, a {
+  color: $charcoal;
+}
+
+.identity {
+  @include media-query(mobile) {
+    grid-row: 1 / span 1;
+    & img {
+      border-radius: 50%;
+      width: 40%;
+      float: left;
+    }
+  }
+  @include media-query(tab) {
+    grid-column: 1 / span 1;
+    & img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  // & img {
+  //   border-radius: 50%;
+  //   width: 100%;
+  // }
+  & div.name-position {
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  & h1 {
+    margin: 1rem 0 0.25rem 0;
+    &:hover {
+      color: lighten($dark-gray, 3%);
+    }
+  }
+  & h3 {
+    margin: 0;
+    font-size: 140%;
+    font-weight: lighter;
+    font-style: italic;
+  }
+}
+
+.info {
+  @include media-query(mobile) {
+    grid-row: 2 / span 1;
+    padding: 1rem;
+    font-size: 75%;
+    & p {
+      margin: 0.25rem;
+    }
+  }
+  @include media-query(tab) {
+    grid-column: 2 / span 1;
+    padding: 2rem;
+    & p {
+      margin: 0;
+    }
+  }
+  background-color: $gray;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & p {
+    font-weight: lighter;
+    //margin: 0;
+  }
+  & span.spanstyle {
+    font-weight: bold;
+    font-size: 115%;
+  }
+  & div.social-link {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+  }
+}
