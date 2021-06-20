@@ -1,0 +1,15 @@
+// Import partials
+@import 'settings.variables';
+@import 'base.normalize';
+@import 'settings.responsive';
+@import 'components.content';
+
+// header {
+//   //background-image: url("../images/header-background.jpeg"), linear-gradient(to top, #093c60, black);
+//   background-color: green;
+// }
+
+p {
+  color: orange;
+  font-weight: bold;
+}
