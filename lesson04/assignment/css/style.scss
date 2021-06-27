@@ -1,4 +1,4 @@
-// Import partials here
+// Imported partials
 @import 'settings.variables';
 @import 'base.normalize';
 @import 'settings.responsive';
@@ -10,10 +10,10 @@ header {
   background-image: url("../img/header-image.jpg"), linear-gradient(to bottom, $wine-red, $near-black);
   background-color: $near-black;
   background-size: cover;
-  background-position: 50% 80%;
+  background-position: 50% 100%;
   color: $cream;
   height: 18rem;
-  border-bottom: 2px $cream solid;
+  border-bottom: 6px $cream double;
   & .logo-container {
     position: relative;
     top: 7rem;
@@ -24,14 +24,6 @@ header {
       margin: -1rem 0 2rem 1.75rem;
     }
   }
-  // & nav {
-  //   position: absolute;
-  //   top: 17rem;
-  //   background-color: $near-black;
-  //   padding: 0.75rem;
-  //   width: 100%;
-  //   color: $cream;
-  // }
 }
 
 .box-container {
@@ -42,7 +34,6 @@ header {
 }
 
 .nav-option {
-  //common styles
   width: 40%;
   margin: 2% 0;
   display: inline-block;
@@ -50,35 +41,20 @@ header {
   overflow: hidden;
   position: relative;
   text-align: center;
-  -webkit-box-shadow: 1px 1px 2px #e6e6e6;
-  -moz-box-shadow: 1px 1px 2px #e6e6e6;
-  box-shadow: 1px 1px 2px #e6e6e6;
-  cursor: default;
-  background: #fff url(./img/bgimg.jpg) no-repeat center center;
-  &:hover {
-    & .pic-layer {
-      opacity: 0;
-    }
-  }
   & img {
-    //common styles
     display: block;
     position: relative;
-    max-width: 100%;
-    //transition styles
-    -webkit-transform: scaleY(1);
-    -moz-transform: scaleY(1);
-    -o-transform: scaleY(1);
-    -ms-transform: scaleY(1);
+    width: 100%;
     transform: scaleY(1);
-    -webkit-transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    -ms-transition: all 0.7s ease-in-out;
-    transition: all 0.7s ease-in-out;
+    transition-property: transform, opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
   }
+  // & :hover img {
+  //   transform: scale(2);
+  //   opacity: 20%;
+  // }
   & h2 {
-    //common styles
     position: absolute;
     top: 40%;
     left: 50%;
@@ -86,233 +62,87 @@ header {
     width: 100%;
     background-color: rgba(1, 1, 1, 0.6);
     padding: 2rem;
+    transition-property: opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
   }
+  // & :hover h2 {
+  //   opacity: 0%;
+  // }
   & .mask {
-    //common styles
-    width: 100%;
+    //width: 100%;
+    height: 100%;
     background-size: cover;
     position: absolute;
     overflow: hidden;
     top: 0;
     left: 0;
-    background-color: rgba(255, 231, 179, 0.3);
-    //transition styles
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0;
+    background-color: $cream;
+    // transition: opacity 0.5s linear;
+    // opacity: 80%;
   }
   & h3 {
-    //common styles
     text-transform: uppercase;
-    color: #fff;
-    text-align: center;
+    color: $near-black;
     position: relative;
     font-size: 17px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0;
-    //transition styles
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    margin: 20px 40px 0px 40px;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
+    margin: 2rem 4rem 0 4rem;
     transform: scale(0);
-    color: #333;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0;
+    transition: transform 0.5s linear;
   }
   & p {
-    //common styles
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 12px;
     position: relative;
-    color: #fff;
+    width: 90%;
+    margin: 1rem auto;
+    color: $near-black;
     padding: 10px 20px 20px;
-    text-align: center;
-    //transition styles
-    color: #333;
-    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
     transform: scale(0);
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+    transition: transform 0.5s linear;
   }
   & a.info {
-    //common styles
+    color: $cream;
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
     background: #000;
-    color: #fff;
     text-transform: uppercase;
-    -webkit-box-shadow: 0 0 1px #000;
-    -moz-box-shadow: 0 0 1px #000;
-    box-shadow: 0 0 1px #000;
-    //transition styles
-    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
+    box-shadow: 0 0 1px $near-black;
     transform: scale(0);
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-    & :hover {
-      -webkit-box-shadow: 0 0 5px #000;
-      -moz-box-shadow: 0 0 5px #000;
-      box-shadow: 0 0 5px #000;
-    }
+    transition: transform 0.5s linear;
   }
-  & :hover img {
-     -webkit-transform: scale(10);
-     -moz-transform: scale(10);
-     -o-transform: scale(10);
-     -ms-transform: scale(10);
-     transform: scale(10);
-     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-     filter: alpha(opacity=0);
-     opacity: 0;
-  }
-  & :hover .mask {
-     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-     filter: alpha(opacity=100);
-     opacity: 1;
-  }
-  & :hover h2, p, a.info {
-     -webkit-transform: scale(1);
-     -moz-transform: scale(1);
-     -o-transform: scale(1);
-     -ms-transform: scale(1);
-     transform: scale(1);
-     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-     filter: alpha(opacity=100);
-     opacity: 1;
+  & a.info:hover {
+    box-shadow: 0 0 7px #000;
   }
 }
 
-// .view-tenth img {
-//    -webkit-transform: scaleY(1);
-//    -moz-transform: scaleY(1);
-//    -o-transform: scaleY(1);
-//    -ms-transform: scaleY(1);
-//    transform: scaleY(1);
-//    -webkit-transition: all 0.7s ease-in-out;
-//    -moz-transition: all 0.7s ease-in-out;
-//    -o-transition: all 0.7s ease-in-out;
-//    -ms-transition: all 0.7s ease-in-out;
-//    transition: all 0.7s ease-in-out;
-// }
-// .view-tenth .mask {
-//    background-color: rgba(255, 231, 179, 0.3);
-//    -webkit-transition: all 0.5s linear;
-//    -moz-transition: all 0.5s linear;
-//    -o-transition: all 0.5s linear;
-//    -ms-transition: all 0.5s linear;
-//    transition: all 0.5s linear;
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//    filter: alpha(opacity=0);
-//    opacity: 0;
-// }
-// .view-tenth h2 {
-//    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-//    background: transparent;
-//    margin: 20px 40px 0px 40px;
-//    -webkit-transform: scale(0);
-//    -moz-transform: scale(0);
-//    -o-transform: scale(0);
-//    -ms-transform: scale(0);
-//    transform: scale(0);
-//    color: #333;
-//    -webkit-transition: all 0.5s linear;
-//    -moz-transition: all 0.5s linear;
-//    -o-transition: all 0.5s linear;
-//    -ms-transition: all 0.5s linear;
-//    transition: all 0.5s linear;
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//    filter: alpha(opacity=0);
-//    opacity: 0;
-// }
-// .view-tenth p {
-//    color: #333;
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//    filter: alpha(opacity=0);
-//    opacity: 0;
-//    -webkit-transform: scale(0);
-//    -moz-transform: scale(0);
-//    -o-transform: scale(0);
-//    -ms-transform: scale(0);
-//    transform: scale(0);
-//    -webkit-transition: all 0.5s linear;
-//    -moz-transition: all 0.5s linear;
-//    -o-transition: all 0.5s linear;
-//    -ms-transition: all 0.5s linear;
-//    transition: all 0.5s linear;
-// }
-// .view-tenth a.info {
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//    filter: alpha(opacity=0);
-//    opacity: 0;
-//    -webkit-transform: scale(0);
-//    -moz-transform: scale(0);
-//    -o-transform: scale(0);
-//    -ms-transform: scale(0);
-//    transform: scale(0);
-//    -webkit-transition: all 0.5s linear;
-//    -moz-transition: all 0.5s linear;
-//    -o-transition: all 0.5s linear;
-//    -ms-transition: all 0.5s linear;
-//    transition: all 0.5s linear;
-// }
-// .view-tenth:hover img {
-//    -webkit-transform: scale(10);
-//    -moz-transform: scale(10);
-//    -o-transform: scale(10);
-//    -ms-transform: scale(10);
-//    transform: scale(10);
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//    filter: alpha(opacity=0);
-//    opacity: 0;
-// }
-// .view-tenth:hover .mask {
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-//    filter: alpha(opacity=100);
-//    opacity: 1;
-// }
-// .view-tenth:hover h2,.view-tenth:hover p,.view-tenth:hover a.info {
-//    -webkit-transform: scale(1);
-//    -moz-transform: scale(1);
-//    -o-transform: scale(1);
-//    -ms-transform: scale(1);
-//    transform: scale(1);
-//    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-//    filter: alpha(opacity=100);
-//    opacity: 1;
-// }
+.nav-option:hover {
+  & img {
+    transform: scale(2);
+    opacity: 15%;
+  }
+  & h2 {
+    opacity: 0%;
+  }
+  & h3, p, a.info {
+    transform: scale(1,1);
+  }
+}
+
+footer {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 3;
+  border-top: 6px $wine-red double;
+  background-color: $near-black;
+  display: flex;
+  align-items: center;
+  & img {
+    width: 20%;
+    margin: 3rem auto;
+  }
+}
