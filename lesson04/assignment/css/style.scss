@@ -2,7 +2,43 @@
 @import 'settings.variables';
 @import 'base.normalize';
 @import 'settings.responsive';
+@import 'settings.mixins';
 @import 'components.content';
+
+@include media-query(mobile) { //set styles for mobile
+  header {
+    height: 10rem;
+    & .logo-container {
+      top: 15%;
+      margin: auto;
+      background-color: $near-black-fade;
+      border-radius: 5px;
+      font-size: 60%;
+    }
+  }
+  .box-container {
+    display: block;
+    & .nav-option {
+      width: 100%;
+    }
+  }
+}
+
+@include media-query(tab) { //set styles for non-mobile (tablet or larger)
+  header {
+    height: 18rem;
+    & .logo-container {
+      top: 30%;
+      left: 5%;
+    }
+  }
+  .box-container { // Use flex-box to evenly arrange navigation options on homepage
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
 
 header {
   grid-row: 1 / span 1;
@@ -12,26 +48,21 @@ header {
   background-size: cover;
   background-position: 50% 100%;
   color: $cream;
-  height: 18rem;
+  //height: 18rem;
   border-bottom: 6px $cream double;
   & .logo-container {
     position: relative;
-    top: 7rem;
-    left: 1rem;
     width: 45%;
     padding: 0.6rem;
+    text-align: center;
+    & img {
+      max-height: 10rem;
+    }
   & h3 {
-      margin: -1rem 0 2rem 1.75rem;
+      margin: -3% 0 0 0;
+      font-size: 120%;
     }
   }
-}
-
-// Use flex-box to evenly arrange navigation options on homepage
-.box-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 //set default styles for page components
@@ -55,12 +86,13 @@ header {
   }
   & h2 {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    background-color: rgba(1, 1, 1, 0.6);
+    background-color: $near-black-fade;
     padding: 2rem;
+    //font-size: 110%;
     //specify transition settings to take effect with :hover
     transition-property: opacity;
     transition-duration: 700ms;
@@ -81,12 +113,11 @@ header {
     position: relative;
     font-size: 17px;
     padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid $near-black;
     background: transparent;
     margin: 2rem 4rem 0 4rem;
     //specify transition settings to take effect with :hover
-    transform: scale(0);
-    transition: transform 700ms ease-in-out;
+    @include mask-transition();
   }
   & p {
     //font-family: Georgia, serif;
@@ -98,8 +129,7 @@ header {
     color: $near-black;
     padding: 10px 20px 20px;
     //specify transition settings to take effect with :hover
-    transform: scale(0);
-    transition: transform 700ms ease-in-out;
+    @include mask-transition;
   }
   & a.info {
     color: $cream;
@@ -110,8 +140,7 @@ header {
     text-transform: uppercase;
     box-shadow: 0 0 1px $near-black;
     //specify transition settings to take effect with :hover
-    transform: scale(0);
-    transition: transform 700ms ease-in-out;
+    @include mask-transition;
   }
   & a.info:hover {
     box-shadow: 0 0 7px #000;
