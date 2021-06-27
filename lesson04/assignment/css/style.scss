@@ -26,6 +26,7 @@ header {
   }
 }
 
+// Use flex-box to evenly arrange navigation options on homepage
 .box-container {
   display: flex;
   flex-direction: row;
@@ -33,6 +34,7 @@ header {
   justify-content: space-evenly;
 }
 
+//set default styles for page components
 .nav-option {
   width: 40%;
   margin: 2% 0;
@@ -45,15 +47,12 @@ header {
     display: block;
     position: relative;
     width: 100%;
+    //specify transition settings to take effect with :hover
     transform: scaleY(1);
     transition-property: transform, opacity;
     transition-duration: 700ms;
     transition-timing-function: ease-in-out;
   }
-  // & :hover img {
-  //   transform: scale(2);
-  //   opacity: 20%;
-  // }
   & h2 {
     position: absolute;
     top: 40%;
@@ -62,15 +61,12 @@ header {
     width: 100%;
     background-color: rgba(1, 1, 1, 0.6);
     padding: 2rem;
+    //specify transition settings to take effect with :hover
     transition-property: opacity;
     transition-duration: 700ms;
     transition-timing-function: ease-in-out;
   }
-  // & :hover h2 {
-  //   opacity: 0%;
-  // }
   & .mask {
-    //width: 100%;
     height: 100%;
     background-size: cover;
     position: absolute;
@@ -78,8 +74,6 @@ header {
     top: 0;
     left: 0;
     background-color: $cream;
-    // transition: opacity 0.5s linear;
-    // opacity: 80%;
   }
   & h3 {
     text-transform: uppercase;
@@ -90,11 +84,12 @@ header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
     margin: 2rem 4rem 0 4rem;
+    //specify transition settings to take effect with :hover
     transform: scale(0);
-    transition: transform 0.5s linear;
+    transition: transform 700ms ease-in-out;
   }
   & p {
-    font-family: Georgia, serif;
+    //font-family: Georgia, serif;
     font-style: italic;
     font-size: 12px;
     position: relative;
@@ -102,8 +97,9 @@ header {
     margin: 1rem auto;
     color: $near-black;
     padding: 10px 20px 20px;
+    //specify transition settings to take effect with :hover
     transform: scale(0);
-    transition: transform 0.5s linear;
+    transition: transform 700ms ease-in-out;
   }
   & a.info {
     color: $cream;
@@ -113,14 +109,16 @@ header {
     background: #000;
     text-transform: uppercase;
     box-shadow: 0 0 1px $near-black;
+    //specify transition settings to take effect with :hover
     transform: scale(0);
-    transition: transform 0.5s linear;
+    transition: transform 700ms ease-in-out;
   }
   & a.info:hover {
     box-shadow: 0 0 7px #000;
   }
 }
 
+//set post-transition conditions for :hover
 .nav-option:hover {
   & img {
     transform: scale(2);

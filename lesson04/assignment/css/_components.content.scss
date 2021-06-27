@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-family: $text-font;
+    font-family: $main-font;
 }
 
 *,
@@ -24,13 +24,13 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: $header-font;
   font-weight: lighter;
   word-spacing: 3px;
   letter-spacing: 1.5px;
 }
 
 a {
+  font-family: $link-font;
   text-decoration: none;
   color: inherit;
   padding: 0.5rem;
