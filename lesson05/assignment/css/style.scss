@@ -4,26 +4,39 @@
 @import 'settings.responsive';
 @import 'components.content';
 
-.main {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  color: white;
-  font-family: $font-fam;
-  text-align: center;
-  //padding: 2rem;
-}
-
 .header {
-  grid-column: 1 / span 2;
-  background-color: $scarlet;
-  min-height: 10rem;
-  padding: 5rem;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+  background-image: url("../img/header-image.jpg"), linear-gradient(to bottom, $wine-red, $near-black);
+  background-color: $near-black;
+  background-size: cover;
+  background-position: 50% 100%;
+  color: $cream;
+  min-height: 12rem;
+  &__logo-container {
+    position: relative;
+    top: 30%;
+    left: 3%;
+    width: 45%;
+    padding: 0.6rem;
+    text-align: center;
+    & img {
+      max-height: 10rem;
+    }
+    & h3 {
+      margin: -3% 0 0 0;
+      font-size: 100%;
+      font-weight: lighter;
+      word-spacing: 3px;
+      letter-spacing: 1.5px;
+    }
+  }
 }
 
 .nav {
+  grid-row: 2 / span 1;
   grid-column: 1 / span 2;
-  background-color: $lime;
-  margin: auto 0;
+  background-color: $near-black;
   &__list {
     list-style: none;
     display: flex;
@@ -39,8 +52,9 @@
     // }
   }
   &__link {
-    text-decoration: none;
-    color: $white;
+    //text-decoration: none;
+    color: $cream;
+    font-size: 90%;
   }
 }
 
@@ -63,9 +77,11 @@
 }
 .footer {
   grid-column: 1 / span 2;
-  background-color: $blue;
+  background-color: $near-black;
   min-height: 8rem;
-  & h2 {
-    padding: 4rem;
+  text-align: center;
+  & img {
+    width: 20%;
+    margin: 3rem auto;
   }
 }

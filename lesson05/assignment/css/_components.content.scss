@@ -9,7 +9,22 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    //padding: 2rem;
 
+.main {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  color: $cream;
+  font-family: $main-font;
+}
+
+h1, h2 {
+  font-family: $head-font;
+}
+
+a {
+  font-family: $main-font;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem;
 }
