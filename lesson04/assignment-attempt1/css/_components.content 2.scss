@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+// .main {
+//     margin: 1rem;
+//     padding: 2rem;
+//     border: 2rem solid $dark-gray;
+//
+//     display: grid;
+//     grid-template-columns: 35% 65%;
+// }
+
+h1, h2, h3, h4 {
+  font-family: $heading-font-fam;
+}
+
+p, a {
+  font-family: $text-font-fam;
+}

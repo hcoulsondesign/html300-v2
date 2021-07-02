@@ -1,0 +1,175 @@
+// Imported partials
+@import 'settings.variables';
+@import 'base.normalize';
+@import 'settings.responsive';
+@import 'settings.mixins';
+@import 'components.content';
+
+@include media-query(mobile) { //set styles for mobile
+  header {
+    height: 10rem;
+    & .logo-container {
+      top: 15%;
+      margin: auto;
+      background-color: $near-black-fade;
+      border-radius: 5px;
+      font-size: 60%;
+    }
+  }
+  .box-container {
+    display: block;
+    & .nav-option {
+      width: 100%;
+    }
+  }
+}
+
+@include media-query(tab) { //set styles for non-mobile (tablet or larger)
+  header {
+    height: 18rem;
+    & .logo-container {
+      top: 30%;
+      left: 5%;
+    }
+  }
+  .box-container { // Use flex-box to evenly arrange navigation options on homepage
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+header {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+  background-image: url("../img/header-image.jpg"), linear-gradient(to bottom, $wine-red, $near-black);
+  background-color: $near-black;
+  background-size: cover;
+  background-position: 50% 100%;
+  color: $cream;
+  //height: 18rem;
+  border-bottom: 6px $cream double;
+  & .logo-container {
+    position: relative;
+    width: 45%;
+    padding: 0.6rem;
+    text-align: center;
+    & img {
+      max-height: 10rem;
+    }
+  & h3 {
+      margin: -3% 0 0 0;
+      font-size: 120%;
+    }
+  }
+}
+
+//set default styles for page components
+.nav-option {
+  width: 40%;
+  margin: 2% 0;
+  display: inline-block;
+  border: 4px solid $cream;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  & img {
+    display: block;
+    position: relative;
+    width: 100%;
+    //specify transition settings to take effect with :hover
+    transform: scaleY(1);
+    transition-property: transform, opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+  }
+  & h2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: $near-black-fade;
+    padding: 2rem;
+    //font-size: 110%;
+    //specify transition settings to take effect with :hover
+    transition-property: opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+  }
+  & .mask {
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: $cream;
+  }
+  & h3 {
+    text-transform: uppercase;
+    color: $near-black;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    border-bottom: 1px solid $near-black;
+    background: transparent;
+    margin: 2rem 4rem 0 4rem;
+    //specify transition settings to take effect with :hover
+    @include mask-transition();
+  }
+  & p {
+    //font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    width: 90%;
+    margin: 1rem auto;
+    color: $near-black;
+    padding: 10px 20px 20px;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  & a.info {
+    color: $cream;
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px $near-black;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  & a.info:hover {
+    box-shadow: 0 0 7px #000;
+  }
+}
+
+//set post-transition conditions for :hover
+.nav-option:hover {
+  & img {
+    transform: scale(2);
+    opacity: 15%;
+  }
+  & h2 {
+    opacity: 0%;
+  }
+  & h3, p, a.info {
+    transform: scale(1,1);
+  }
+}
+
+footer {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 3;
+  border-top: 6px $wine-red double;
+  background-color: $near-black;
+  display: flex;
+  align-items: center;
+  & img {
+    width: 20%;
+    margin: 3rem auto;
+  }
+}
