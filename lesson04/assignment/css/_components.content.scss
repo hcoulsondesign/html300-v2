@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  background-color: $near-black;
+  color: $cream;
+}
+
+.main {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin: 3rem 0;
+  justify-content: center;
+}
+
+h1, h2, h3 {
+  font-weight: lighter;
+  word-spacing: 3px;
+  letter-spacing: 1.5px;
+}
+
+a {
+  font-family: $link-font;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem;
+}

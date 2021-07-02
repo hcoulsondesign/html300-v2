@@ -1,0 +1,4 @@
+@mixin mask-transition() {
+  transform: scale(0);
+  transition: transform 700ms ease-in-out;
+}
