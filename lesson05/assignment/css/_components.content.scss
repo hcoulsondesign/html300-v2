@@ -20,11 +20,19 @@ html {
 h1, h2 {
   font-family: $head-font;
   text-align: center;
+  letter-spacing: 1px;
 }
 
-a {
+h4 {
+  font-weight: lighter;
+  margin: 0.75rem 0;
+}
+
+p, a {
   font-family: $main-font;
   letter-spacing: 1.5px;
+  font-size: 75%;
+  font-weight: lighter;
   text-decoration: none;
   color: inherit;
   padding: 0.5rem;

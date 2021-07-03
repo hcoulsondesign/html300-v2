@@ -12,14 +12,26 @@
   background-size: cover;
   background-position: 50% 100%;
   color: $cream;
-  min-height: 12rem;
+  min-height: 10rem;
+  @include media-query(tab) {
+    height: 14rem;
+  }
   &__logo-container {
     position: relative;
-    top: 30%;
-    left: 3%;
-    width: 45%;
+    top: 25%;
     padding: 0.6rem;
+    width: 45%;
     text-align: center;
+    @include media-query(mobile) {
+      background-color: $near-black-fade;
+      border-radius: 5px;
+      font-size: 60%;
+      margin: auto;
+    }
+    @include media-query(tab) {
+      top: 30%;
+      left: 3%;
+    }
     & img {
       max-height: 10rem;
     }
@@ -37,56 +49,101 @@
   grid-row: 2 / span 1;
   grid-column: 1 / span 2;
   background-color: $near-black;
+  border-bottom: 6px double $cream;
   &__list {
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0.5rem 1rem;
+    @include media-query(mobile) {
+      flex-wrap: wrap;
+      padding: 0;
+    }
   }
   &__item {
     display: inline-block;
-    align-self: center;
-    // &:last-of-type {
-    //   margin-right: 2rem;
-    // }
+    @include media-query(mobile) {
+      margin: 0.5rem 1rem;
+    }
   }
   &__link {
-    //text-decoration: none;
     color: $cream;
     font-size: 90%;
   }
 }
 
 .sidebar {
-  grid-column: 1 / span 1;
-  background-color: $purple;
-  min-height: 25rem;
-  position: relative;
-  & h2 {
-    padding: 12.5rem 0;
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 2;
+  background-color: $near-black;
+  border-right: 2px solid $cream;
+  @include media-query(desk) {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+  }
+  &__article {
+    background-color: $wine-red;
+    width: 75%;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    // @include media-query(tab) {
+    //   max-width: 25%;
+    // }
+  }
+  h4 {
+    padding: 0 0.5rem;
+  }
+  p {
+    margin: 0;
   }
 }
 
 .main-content {
-  grid-column: 2 / span 1;
-  background-color: $cream;
-  color: $near-black;
+  grid-row: 3 span 1;
+  grid-column: 1 / span 2;
+  background-color: $near-black-fade;
+  @include media-query(desk) {
+    grid-row: 3 span 1;
+    grid-column: 2 / span 1;
+  }
   &__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    background-color: $near-black;
+    background-color: $cream;
     width: 90%;
-    margin: auto;
+    margin: 1rem auto 2rem auto;
+    @include media-query(desk) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
   }
   &__tile {
-    //display: inline-block;
     flex-basis: 25%;
-    background-color: $wine-red;
-    // width: 25%;
-    margin: 1rem 4.1%;
+    background-color: $near-black;
+    margin: 2rem 4.15%;
+    padding: 1rem;
+  }
+  &__img {
+    float: left;
+    max-width: 25%;
+    height: auto;
+    padding: 0.5rem 1rem 1rem 0;
+    @include media-query(desk) {
+      clear: both;
+      width: 90%;
+      margin: auto;
+      padding: 0.5rem 0 1rem 1rem;
+    }
+  }
+  h4 {
+    padding: 0 0.5rem;
+  }
+  p {
+    margin: 0;
+    &:first-of-type {
+      margin-top: 0.5rem;
+    }
   }
   &--bold {
     font-weight: bold;
@@ -96,6 +153,7 @@
 .footer {
   grid-column: 1 / span 2;
   background-color: $near-black;
+  border-top: 6px double $cream;
   min-height: 8rem;
   text-align: center;
   & img {
