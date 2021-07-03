@@ -4,6 +4,7 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+//styling for header block
 .header {
   grid-row: 1 / span 1;
   grid-column: 1 / span 3;
@@ -45,6 +46,7 @@
   }
 }
 
+//styling for nav block
 .nav {
   grid-row: 2 / span 1;
   grid-column: 1 / span 2;
@@ -73,6 +75,7 @@
   }
 }
 
+//styling for aside - includes media query to rearrange alongside main-content when screen width allows (>1024px)
 .sidebar {
   grid-row: 4 / span 1;
   grid-column: 1 / span 2;
@@ -87,9 +90,10 @@
     width: 75%;
     margin: 0 auto 2rem auto;
     padding: 1rem;
-    // @include media-query(tab) {
-    //   max-width: 25%;
-    // }
+    font-size: 130%;
+    @include media-query(desk) {
+      font-size: 100%;
+    }
   }
   h4 {
     padding: 0 0.5rem;
@@ -99,6 +103,7 @@
   }
 }
 
+//styling for main page content - includes media query to move alongside sidebar when screen width is adequate
 .main-content {
   grid-row: 3 span 1;
   grid-column: 1 / span 2;
@@ -107,29 +112,28 @@
     grid-row: 3 span 1;
     grid-column: 2 / span 1;
   }
-  &__container {
+  &__container { //container to hold flexbox elements
     background-color: $cream;
     width: 90%;
     margin: 1rem auto 2rem auto;
     overflow: hidden;
-    @include media-query(desk) {
+    @include media-query(desk) { //only uses flexbox when screen is wide enough to show multiple wine tiles on same line
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-between;
+      padding: 1rem;
     }
   }
   &__tile {
-    // position: relative;
-    // top: 2rem;
     background-color: $near-black;
     margin: 2rem;
     padding: 1rem;
     overflow: hidden;
-    font-size: 140%;
-    @include media-query(desk) {
-      flex-basis: 25%;
-      margin: 2rem 4.15%;
+    font-size: 130%;
+    @include media-query(desk) { // each tile is one flexbox element
+      max-width: 28%;
+      margin: 1rem;
       font-size: 100%;
     }
   }
@@ -158,6 +162,7 @@
   }
 }
 
+//footer block styling
 .footer {
   grid-column: 1 / span 2;
   background-color: $near-black;
