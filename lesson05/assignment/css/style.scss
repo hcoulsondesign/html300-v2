@@ -77,10 +77,10 @@
   grid-row: 4 / span 1;
   grid-column: 1 / span 2;
   background-color: $near-black;
-  border-right: 2px solid $cream;
   @include media-query(desk) {
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
+    border-right: 2px solid $cream;
   }
   &__article {
     background-color: $wine-red;
@@ -111,6 +111,7 @@
     background-color: $cream;
     width: 90%;
     margin: 1rem auto 2rem auto;
+    overflow: hidden;
     @include media-query(desk) {
       display: flex;
       flex-direction: row;
@@ -119,21 +120,28 @@
     }
   }
   &__tile {
-    flex-basis: 25%;
+    // position: relative;
+    // top: 2rem;
     background-color: $near-black;
-    margin: 2rem 4.15%;
+    margin: 2rem;
     padding: 1rem;
+    overflow: hidden;
+    font-size: 140%;
+    @include media-query(desk) {
+      flex-basis: 25%;
+      margin: 2rem 4.15%;
+      font-size: 100%;
+    }
   }
   &__img {
     float: left;
-    max-width: 25%;
-    height: auto;
+    width: 25%;
     padding: 0.5rem 1rem 1rem 0;
     @include media-query(desk) {
       clear: both;
       width: 90%;
       margin: auto;
-      padding: 0.5rem 0 1rem 1rem;
+      padding: 0.5rem 0 1rem 0.5rem;
     }
   }
   h4 {
@@ -158,6 +166,12 @@
   text-align: center;
   & img {
     width: 20%;
-    margin: 3rem auto;
+    margin: 2rem auto 0.5rem auto;
+  }
+  &__nav {
+    margin-bottom: 2rem;
+  }
+  &__link {
+    margin: 0 1rem;
   }
 }
