@@ -67,14 +67,32 @@
     padding: 12.5rem 0;
   }
 }
+
 .main-content {
   grid-column: 2 / span 1;
-  background-color: $orange;
-  min-height: 25rem;
-  & h2 {
-    padding: 12.5rem 0;
+  background-color: $cream;
+  color: $near-black;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: $near-black;
+    width: 90%;
+    margin: auto;
+  }
+  &__tile {
+    //display: inline-block;
+    flex-basis: 25%;
+    background-color: $wine-red;
+    // width: 25%;
+    margin: 1rem 4.1%;
+  }
+  &--bold {
+    font-weight: bold;
   }
 }
+
 .footer {
   grid-column: 1 / span 2;
   background-color: $near-black;
