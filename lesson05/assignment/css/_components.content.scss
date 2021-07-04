@@ -9,6 +9,10 @@ html {
     box-sizing: inherit;
 }
 
+body {
+  background-color: $near-black;
+}
+
 .main-home {
   display: grid;
   grid-template-columns: 15% 70% 15%;

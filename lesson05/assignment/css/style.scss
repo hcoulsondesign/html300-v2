@@ -8,17 +8,24 @@
 .header {
   grid-row: 1 / span 1;
   grid-column: 1 / span 3; //set to span 3 to accomodate grid for index.html
+  border-bottom: 6px double $cream;
+}
+
+//styling for image portion of header block
+.header-img {
   background-image: url("../img/header-image.jpg"), linear-gradient(to bottom, $wine-red, $near-black);
   background-color: $near-black;
   background-size: cover;
   background-position: 50% 100%;
   color: $cream;
+  position: relative;
+  top: 0;
   min-height: 10rem;
   @include media-query(tab) {
-    height: 14rem;
+    min-height: 14rem;
   }
   &__logo-container {
-    position: relative;
+    position: absolute;
     top: 25%;
     padding: 0.6rem;
     width: 45%;
@@ -27,10 +34,12 @@
       background-color: $near-black-fade;
       border-radius: 5px;
       font-size: 60%;
+      left: 0;
+      right: 0;
       margin: auto;
     }
     @include media-query(tab) {
-      top: 30%;
+      top: 35%;
       left: 3%;
     }
     & img {
@@ -48,16 +57,17 @@
 
 //styling for nav block
 .nav {
-  grid-row: 2 / span 1;
-  grid-column: 1 / span 2;
+  display: block;
+  position: static;
+  width: 100%;
   background-color: $near-black;
-  border-bottom: 6px double $cream;
+  padding: 0;
   &__list {
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     @include media-query(mobile) {
       flex-wrap: wrap;
       padding: 0;
@@ -77,11 +87,11 @@
 
 //styling for aside - includes media query to rearrange alongside main-content when screen width allows (>1024px)
 .sidebar {
-  grid-row: 4 / span 1;
+  grid-row: 3 / span 1;
   grid-column: 1 / span 2;
   background-color: $near-black;
   @include media-query(desk) {
-    grid-row: 3 / span 1;
+    grid-row: 2 / span 1;
     grid-column: 1 / span 1;
     border-right: 2px solid $cream;
   }
@@ -105,11 +115,11 @@
 
 //styling for main page content - includes media query to move alongside sidebar when screen width is adequate
 .main-content {
-  grid-row: 3 span 1;
+  grid-row: 2 span 1;
   grid-column: 1 / span 2;
   background-color: $near-black-fade;
   @include media-query(desk) {
-    grid-row: 3 span 1;
+    grid-row: 2 span 1;
     grid-column: 2 / span 1;
   }
   &__container { //container to hold flexbox elements
@@ -183,14 +193,10 @@
 }
 
 //styling needed for index.html homepage
-body.home {
-  background-color: $near-black;
-}
-
 .main-content-home {
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
   justify-content: center;
   background-color: $near-black;
   color: $cream;
@@ -200,7 +206,8 @@ body.home {
   background-color: yellow;
   color: $near-black;
   width: 80%;
-  margin: auto;
+  margin: 2rem auto 1rem auto;
+  padding: 1rem 0;
 }
 
 .container {
@@ -223,4 +230,94 @@ body.home {
       width: 40%;
     }
   }
+  &__img {
+    display: block;
+    position: relative;
+    width: 100%;
+    //specify transition settings to take effect with :hover
+    transform: scaleY(1);
+    transition-property: transform, opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+  }
+  &__title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-weight: lighter;
+    background-color: $near-black-fade;
+    padding: 2rem;
+    //font-size: 110%;
+    //specify transition settings to take effect with :hover
+    transition-property: opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+  }
+  &__mask {
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: $cream;
+  }
+  & h3 {
+    text-transform: uppercase;
+    color: $near-black;
+    position: relative;
+    font-size: 90%;
+    padding: 1rem;
+    border-bottom: 1px solid $near-black;
+    background: transparent;
+    margin: 1rem 2rem 0 2rem;
+    //specify transition settings to take effect with :hover
+    //@include mask-transition();
+  }
+  & p {
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    width: 90%;
+    margin: 0.5rem auto;
+    color: $near-black;
+    font-size: 75%;
+    //specify transition settings to take effect with :hover
+    //@include mask-transition;
+  }
+  &__info {
+    color: $cream;
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: $near-black;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px $near-black;
+    //specify transition settings to take effect with :hover
+    //@include mask-transition;
+  }
+  &__info:hover {
+    background-color: green;
+    box-shadow: 0 0 7px $near-black;
+  }
+  //set post-transition conditions for :hover
+  &__nav-option:hover {
+    & img {
+      transform: scale(2);
+      opacity: 15%;
+    }
+    & h2 {
+      opacity: 0%;
+    }
+    & h3, p, a {
+      transform: scale(1,1);
+    }
+  }
+}
+
+a.container__info:hover {
+  background-color: green;
+  box-shadow: 0 0 7px $near-black;
 }
