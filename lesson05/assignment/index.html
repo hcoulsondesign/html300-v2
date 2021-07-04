@@ -7,64 +7,71 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Winecierge.com</title>
 </head>
-<body>
-  <header class="header">
-    <div class="header__logo-container">
-      <img src="./img/winecierge-logo-light.svg">
-      <h3>Helping you plan your next wine experience</h3>
-    </div>
-  </header>
-  <!-- Begin html based on source code - source: https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/ -->
-  <main class="main"> <!--Main section of homepage serves as navigation hub for website-->
-    <div class="box-container">
-        <div class="nav-option">
-          <div class="mask">
+<body class="home">
+  <main class="main-home">
+    <header class="header" id="Top">
+      <div class="header__logo-container">
+        <img src="./img/winecierge-logo-light.svg">
+        <h3>Helping you plan your next wine experience</h3>
+      </div>
+    </header>
+    <!-- Begin html based on source code - source: https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/ -->
+    <!--Main-page section of homepage serves as navigation hub for website-->
+    <section class="main-content-home">
+      <h2 class="alert">Instructors: <br> Click 'Read More' under My Cellar to view content for Assignment 5</h2>
+      <div class="container">
+        <div class="container__nav-option">
+          <div class="container__mask">
               <h3>About Winecierge</h3>
               <p>Offering introductory lessons and the latest in industry news, we're here to serve as a concierge of wine experiences for burgeoning wine enthusiasts.</p>
-              <a href="#" class="info">Read More</a>
+              <a href="#" class="container__info">Read More</a>
           </div>
-          <div class="pic-layer">
+          <div class="container__pic-layer">
             <img src="./img/red-mtn.jpg">
             <h2>About Winecierge</h2>
           </div>
         </div>
-        <div class="nav-option">
-          <div class="mask">
+        <div class="container__nav-option">
+          <div class="container__mask">
             <h3>Wine Education</h3>
             <p>Follow our blog of brief lessons about wine regions, the science of winemaking, and sensory appreciation of wine.</p>
             <a href="#" class="info">Read More</a>
           </div>
-          <div class="pic-layer">
+          <div class="container__pic-layer">
             <img src="./img/wine-education.jpg" />
             <h2>Wine Education</h2>
           </div>
         </div>
-        <div class="nav-option">
-          <div class="mask">
+        <div class="container__nav-option">
+          <div class="container__mask">
               <h3>Industry News</h3>
               <p>Learn the latest in industry happenings that affect the grape growing season, vintage availability, and the marketplace.</p>
               <a href="#" class="info">Read More</a>
           </div>
-          <div class="pic-layer">
+          <div class="container__pic-layer">
             <img src="./img/merlot-cluster.jpg" />
             <h2>Industry News</h2>
           </div>
         </div>
-        <div class="nav-option">
-          <div class="mask">
+        <div class="container__nav-option">
+          <div class="container__mask">
               <h3>My Cellar</h3>
               <p>Keep track of the wines you own and those you hope to acquire. Organize your collection by region, variety, or vintage.</p>
               <a href="my-cellar.html" class="info">Read More</a>
           </div>
-          <div class="pic-layer">
+          <div class="container__pic-layer">
             <img src="./img/bottle-cellar.jpg"  alt="Photo by Javier Balseiro on Unsplash">
             <h2>My Cellar</h2>
           </div>
         </div>
       </div>
+    </section>
+    <footer class="footer">
+      <img src="./img/winecierge-logo-light.svg">
+      <nav class="footer__nav">
+        <a href="#Top" class="footer__link">Back to Top</a>
+      </nav>
+    </footer>
   </main>
-  <footer>
-    <img src="./img/winecierge-logo-light.svg">
-  </footer>
 </body>
 </html>
