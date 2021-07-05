@@ -2,6 +2,7 @@
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
+@import 'settings.mixins';
 @import 'components.content';
 
 //styling for header block
@@ -22,11 +23,10 @@
   top: 0;
   min-height: 10rem;
   @include media-query(tab) {
-    min-height: 14rem;
+    min-height: 15rem;
   }
   &__logo-container {
     position: absolute;
-    top: 25%;
     padding: 0.6rem;
     width: 45%;
     text-align: center;
@@ -34,12 +34,13 @@
       background-color: $near-black-fade;
       border-radius: 5px;
       font-size: 60%;
+      top: 25%;
       left: 0;
       right: 0;
       margin: auto;
     }
     @include media-query(tab) {
-      top: 35%;
+      bottom: 1rem;
       left: 3%;
     }
     & img {
@@ -207,12 +208,28 @@
   color: $near-black;
   width: 80%;
   margin: 2rem auto 1rem auto;
-  padding: 1rem 0;
+  padding: 1rem;
+  border: 10px outset darken(yellow, 10%);
+  &--grow {
+    animation: myframes 3000ms ease-in-out 0s infinite;
+  }
+}
+
+@keyframes myframes {
+  0%{
+    letter-spacing: 1px;
+  }
+  50%{
+    letter-spacing: 8px;
+  }
+  100%{
+    letter-spacing: 1px;
+  }
 }
 
 .container {
   //display: block;
-  @include media-query(tab) {
+  @include media-query(lg) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -226,7 +243,7 @@
     overflow: hidden;
     position: relative;
     text-align: center;
-    @include media-query(tab) {
+    @include media-query(lg) {
       width: 40%;
     }
   }
@@ -235,10 +252,7 @@
     position: relative;
     width: 100%;
     //specify transition settings to take effect with :hover
-    transform: scaleY(1);
-    transition-property: transform, opacity;
-    transition-duration: 700ms;
-    transition-timing-function: ease-in-out;
+    @include img-transition;
   }
   &__title {
     position: absolute;
@@ -249,10 +263,9 @@
     font-weight: lighter;
     background-color: $near-black-fade;
     padding: 2rem;
-    //font-size: 110%;
     //specify transition settings to take effect with :hover
     transition-property: opacity;
-    transition-duration: 700ms;
+    transition-duration: 800ms;
     transition-timing-function: ease-in-out;
   }
   &__mask {
@@ -260,46 +273,49 @@
     background-size: cover;
     position: absolute;
     overflow: hidden;
+    opacity: 0;
     top: 0;
     left: 0;
     background-color: $cream;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
   }
   & h3 {
     text-transform: uppercase;
     color: $near-black;
-    position: relative;
+    //position: relative;
     font-size: 90%;
-    padding: 1rem;
+    padding: 5% 2%;
     border-bottom: 1px solid $near-black;
     background: transparent;
-    margin: 1rem 2rem 0 2rem;
+    margin:0 2rem;
     //specify transition settings to take effect with :hover
-    //@include mask-transition();
+    @include mask-transition;
   }
   & p {
     font-style: italic;
     font-size: 12px;
-    position: relative;
+    //position: relative;
     width: 90%;
-    margin: 0.5rem auto;
+    margin: 5% auto;
+    padding: 0;
     color: $near-black;
-    font-size: 75%;
+    font-size: 70%;
     //specify transition settings to take effect with :hover
-    //@include mask-transition;
+    @include mask-transition;
   }
-  &__info {
+  &__link {
     color: $cream;
     display: inline-block;
     text-decoration: none;
-    padding: 7px 14px;
+    padding: 2% 5%;
     background: $near-black;
     text-transform: uppercase;
     box-shadow: 0 0 1px $near-black;
     //specify transition settings to take effect with :hover
-    //@include mask-transition;
+    @include mask-transition;
   }
-  &__info:hover {
-    background-color: green;
+  &__link:hover {
     box-shadow: 0 0 7px $near-black;
   }
   //set post-transition conditions for :hover
@@ -311,13 +327,9 @@
     & h2 {
       opacity: 0%;
     }
-    & h3, p, a {
+    & h3, p, a, .container__mask {
+      opacity: 100%;
       transform: scale(1,1);
     }
   }
-}
-
-a.container__info:hover {
-  background-color: green;
-  box-shadow: 0 0 7px $near-black;
 }

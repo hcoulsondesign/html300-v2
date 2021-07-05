@@ -1,0 +1,13 @@
+@mixin img-transition() {
+  transform: scaleY(1);
+  transition-property: transform, opacity;
+  transition-duration: 800ms;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin mask-transition() {
+  transform: scale(0);
+  transition-property: transform, opacity;
+  transition-duration: 800ms;
+  transition-timing-function: ease-in-out;
+}
