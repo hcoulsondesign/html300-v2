@@ -13,6 +13,7 @@
     </head>
     <body>
         <main>
+          <!-- HEADER SECTION W/ NAV -->
           <header id="Top">
             <div class="bg-dark">
               <div class="w-50 mx-auto py-3">
@@ -42,7 +43,9 @@
               </div>
             </nav>
           </header>
+          <!-- MAIN PAGE SECTION: INCLUDES GRID SYSTEM + POPOVERS -->
           <section class="container mt-4">
+            <!-- MAIN INFO -->
             <div class="row mx-auto my-3 ">
               <div class="col-12 text-center">
                 <h1>Wine Education</h1>
@@ -77,6 +80,7 @@
                 <h4 id="Feel">Feel</h4>
                 <p>Feel is perhaps one of the most important senses used in wine tasting but also the hardest to master. This is because there is a large number of tactile sensations created by a wine's interaction with the surfaces of the mouth, some of which can be considered either good <em>or</em> bad depending on the intended style of a wine. For example, the spicy, rustic <span class="text-info font-weight-bold" data-toggle="popover" title="Tannin" data-content="macromolecules present in wine that contribute to its color, texture, and long-term shelf stability">tannins</span> that contribute to the <span class="text-info font-weight-bold" data-toggle="popover" title="Mouthfeel" data-content="the physical, textural sensations detected in the mouth during tasting, such as weight, fullness, and length">mouthfeel</span> of a bold Bordeaux red can be a good thing, while the same characteristics are considered undesirable in lighter style reds and white wines such as Pinot Noir and Pinot Gris.</p>
               </div>
+              <!-- SIDEBAR INFO -->
               <aside class="col-sm-12 col-md-8 col-xl-3 mx-auto my-3 bg-info text-white font-weight-light">
                 <div class="p-3">
                   <h3 class="my-4 text-center font-italic">For interest's sake...</h3>
@@ -93,7 +97,7 @@
               </aside>
             </div>
           </section>
-
+          <!-- FOOTER SECTION -->
           <footer class="bg-dark py-5">
             <div class="w-25 mx-auto">
               <img src="./img/winecierge-logo-white.svg">
@@ -103,6 +107,7 @@
             </div>
           </footer>
         </main>
+        <!-- SCRIPT TO POWER POPOVER FUNCTIONALITY -->
         <script>
         $(document).ready(function(){
             $('[data-toggle="popover"]').popover();
