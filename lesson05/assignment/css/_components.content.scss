@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    margin: 0;
 }
 
 *,
@@ -8,6 +9,39 @@ html {
     box-sizing: inherit;
 }
 
+body {
+  background-color: $near-black;
+}
+
+.main-home {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+}
+
 .main {
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  color: $cream;
+  font-family: $main-font;
+}
+
+h1, h2 {
+  font-family: $head-font;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-weight: lighter;
+  margin: 0.75rem 0;
+}
+
+p, a {
+  font-family: $main-font;
+  letter-spacing: 1.5px;
+  font-size: 80%;
+  font-weight: lighter;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem;
 }

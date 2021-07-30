@@ -2,5 +2,334 @@
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
+@import 'settings.mixins';
 @import 'components.content';
 
+//styling for header block
+.header {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3; //set to span 3 to accomodate grid for index.html
+  border-bottom: 6px double $cream;
+}
+
+//styling for image portion of header block
+.header-img {
+  background-image: url("../img/header-image.jpg"), linear-gradient(to bottom, $wine-red, $near-black);
+  background-color: $near-black;
+  background-size: cover;
+  background-position: 50% 100%;
+  color: $cream;
+  position: relative;
+  top: 0;
+  min-height: 10rem;
+  @include media-query(tab) {
+    min-height: 15rem;
+  }
+  &__logo-container {
+    position: absolute;
+    padding: 0.6rem;
+    width: 45%;
+    text-align: center;
+    @include media-query(mobile) {
+      background-color: $near-black-fade;
+      border-radius: 5px;
+      font-size: 60%;
+      top: 25%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    @include media-query(tab) {
+      bottom: 1rem;
+      left: 3%;
+    }
+    & img {
+      max-height: 10rem;
+    }
+    & h3 {
+      margin: -3% 0 0 0;
+      font-size: 100%;
+      font-weight: lighter;
+      word-spacing: 3px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+//styling for nav block
+.nav {
+  display: block;
+  position: static;
+  width: 100%;
+  background-color: $near-black;
+  padding: 0;
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+    @include media-query(mobile) {
+      flex-wrap: wrap;
+      padding: 0;
+    }
+  }
+  &__item {
+    display: inline-block;
+    @include media-query(mobile) {
+      margin: 0.5rem 1rem;
+    }
+  }
+  &__link {
+    color: $cream;
+    font-size: 90%;
+  }
+}
+
+//styling for aside - includes media query to rearrange alongside main-content when screen width allows (>1024px)
+.sidebar {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 2;
+  background-color: $near-black;
+  @include media-query(desk) {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    border-right: 2px solid $cream;
+  }
+  &__article {
+    background-color: $wine-red;
+    width: 75%;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    font-size: 130%;
+    @include media-query(desk) {
+      font-size: 100%;
+    }
+  }
+  h4 {
+    padding: 0 0.5rem;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+//styling for main page content - includes media query to move alongside sidebar when screen width is adequate
+.main-content {
+  grid-row: 2 span 1;
+  grid-column: 1 / span 2;
+  background-color: $near-black-fade;
+  @include media-query(desk) {
+    grid-row: 2 span 1;
+    grid-column: 2 / span 1;
+  }
+  &__container { //container to hold flexbox elements
+    background-color: $cream;
+    width: 90%;
+    margin: 1rem auto 2rem auto;
+    overflow: hidden;
+    @include media-query(desk) { //only uses flexbox when screen is wide enough to show multiple wine tiles on same line
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+  }
+  &__tile {
+    background-color: $near-black;
+    margin: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    font-size: 130%;
+    @include media-query(desk) { // each tile is one flexbox element
+      max-width: 28%;
+      margin: 1rem;
+      font-size: 100%;
+    }
+  }
+  &__img {
+    float: left;
+    width: 25%;
+    padding: 0.5rem 1rem 1rem 0;
+    @include media-query(desk) {
+      clear: both;
+      width: 90%;
+      margin: auto;
+      padding: 0.5rem 0 1rem 0.5rem;
+    }
+  }
+  h4 {
+    padding: 0 0.5rem;
+  }
+  p {
+    margin: 0;
+    &:first-of-type {
+      margin-top: 0.5rem;
+    }
+  }
+  &--bold {
+    font-weight: bold;
+  }
+}
+
+//footer block styling
+.footer {
+  grid-column: 1 / span 3; //set to span 3 to accomodate grid for index.html
+  background-color: $near-black;
+  border-top: 6px double $cream;
+  min-height: 8rem;
+  text-align: center;
+  & img {
+    width: 20%;
+    margin: 2rem auto 0.5rem auto;
+  }
+  &__nav {
+    margin-bottom: 2rem;
+  }
+  &__link {
+    margin: 0 1rem;
+    color: $cream;
+  }
+}
+
+//styling needed for index.html homepage
+.main-content-home {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin: 0 0 3rem 0;
+  justify-content: center;
+  background-color: $near-black;
+  color: $cream;
+}
+
+.alert {
+  background-color: yellow;
+  color: $near-black;
+  width: 80%;
+  margin: 2rem auto 1rem auto;
+  padding: 1rem;
+  border: 10px outset darken(yellow, 10%);
+  &--grow {
+    animation: myframes 3000ms ease-in-out 0s infinite;
+  }
+}
+
+@keyframes myframes {
+  0%{
+    letter-spacing: 1px;
+  }
+  50%{
+    letter-spacing: 8px;
+  }
+  100%{
+    letter-spacing: 1px;
+  }
+}
+
+.container {
+  //display: block;
+  @include media-query(lg) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  &__nav-option {
+    width: 100%;
+    margin: 2% 0;
+    display: inline-block;
+    border: 4px solid $cream;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    @include media-query(lg) {
+      width: 40%;
+    }
+  }
+  &__img {
+    display: block;
+    position: relative;
+    width: 100%;
+    //specify transition settings to take effect with :hover
+    @include img-transition;
+  }
+  &__title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-weight: lighter;
+    background-color: $near-black-fade;
+    padding: 2rem;
+    //specify transition settings to take effect with :hover
+    transition-property: opacity;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in-out;
+  }
+  &__mask {
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background-color: $cream;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  & h3 {
+    text-transform: uppercase;
+    color: $near-black;
+    //position: relative;
+    font-size: 90%;
+    padding: 5% 2%;
+    border-bottom: 1px solid $near-black;
+    background: transparent;
+    margin:0 2rem;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  & p {
+    font-style: italic;
+    font-size: 12px;
+    //position: relative;
+    width: 90%;
+    margin: 5% auto;
+    padding: 0;
+    color: $near-black;
+    font-size: 70%;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  &__link {
+    color: $cream;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2% 5%;
+    background: $near-black;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px $near-black;
+    //specify transition settings to take effect with :hover
+    @include mask-transition;
+  }
+  &__link:hover {
+    box-shadow: 0 0 7px $near-black;
+  }
+  //set post-transition conditions for :hover
+  &__nav-option:hover {
+    & img {
+      transform: scale(2);
+      opacity: 15%;
+    }
+    & h2 {
+      opacity: 0%;
+    }
+    & h3, p, a, .container__mask {
+      opacity: 100%;
+      transform: scale(1,1);
+    }
+  }
+}
