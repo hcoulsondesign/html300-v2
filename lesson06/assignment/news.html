@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <title>Assignment 06 - Bootstrap 4</title>
+    </head>
+    <body>
+        <main>
+          <!-- HEADER SECTION W/ NAV -->
+          <header id="Top">
+            <div class="bg-dark">
+              <div class="w-50 mx-auto py-3">
+                <img src="./img/winecierge-logo-white.svg">
+                <h5 class="mb-0 pb-4 text-white text-center">Helping you plan your next wine experience</h5>
+              </div>
+            </div>
+            <nav	class="navbar	navbar-expand-lg	navbar-dark	bg-danger">
+              <div	class="container">
+                <a	class="navbar-nav text-light px-5"	href="#">Menu</a>
+                <button	class="navbar-toggler"	data-toggle="collapse"
+                data-target="#navbarNav"
+                ><span	class="navbar-toggler-icon"></span></button>
+                <div	id="navbarNav"	class="collapse	navbar-collapse">
+                  <ul	class="navbar-nav ml-4">
+                    <li	class="nav-item">
+                      <a	class="nav-link px-3"	href="index.html">Home</a>
+                    </li>
+                    <li	class="nav-item">
+                      <a	class="nav-link px-3"	href="about.html">About</a>
+                    </li>
+                    <li	class="nav-item">
+                      <a	class="nav-link px-3"	href="education.html">Education</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <!-- MAIN PAGE SECTION: UTILIZES ACCORDION -->
+          <section>
+            <div class="w-75 mx-auto my-4">
+              <div class="text-center">
+                <h1>Industry News</h1>
+                <p>The latest news from the global industry and how it impacts consumers.</p>
+              </div>
+              <div class="my-4" id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link text-dark font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Record High Temps have PNW Growers Worried about 2021 Harvest - 5 July 2021
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>As temperatures in several parts of the Pacific Northwest have smashed decades-old high temperature records and set more for how long those high temps were sustained, growers have begun to worry about the effect of the extreme heat on the vines.</p>
+                      <p>Although this latest spell struck late enough in the season that it did not impact flowering or fruit set, it still has the potential to inflict sunburn damage on lighter-skinned varieties. "To make matters worse, in some vineyards we intentionally defoliated to allow better airflow through the fruiting zone," said Dick Boushey of Boushey Vineyards. "We already had a light harvest combined with scattered zones of smoke damage in 2020, and we can't afford a second year in a row of low yields. Had we known this long and extreme of a heat wave was coming, we may have made some different decisions." <a href="#" class="text-info">Read more...</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link text-dark font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        COVID Travel Restrictions Continue to Pose Serious Challenges for Worldwide Industry Workforce - 14 May 2021
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>As Spring temperatures spread across the Northern Hemisphere, and Australia and New Zealand welcomed each other into a mutual travel bubble, many were hopeful that the darkest days of the pandemic were drawing to a close. But even as accelerated vaccine rollout in the United States and several European countries gave many in the wine industry hope for a normal Harvest 2021, challenges in Southern Hemisphere wine regions spelled trouble for an industry that relies heavily on international workers traveling from harvest to harvest. </p>
+                      <p>"Prior to Vintage 2021 we had only just lifted the ban on travel from Australia," said Stu Marfell of Foley Wines Ltd in Marlborough, New Zealand. "We knew that borders would never open for workers from across Europe and North America in time, so we had to scramble and find help locally." While wine producers in Australia and New Zealand ultimately made it through the February-April season with only local help, North American producers, who had another six months before their own harvest, hoped they wouldn't have to. But even as many more in the general population become fully vaccinated, worldwide COVID policies continue to impact U.S. Embassy operations overseas. With several Embassies and Consulates still in complete lock-down, much of the international workforce is unable to schedule the in-person interview appointments required for attaining a J-1 visa for seasonal work in the United States. <a href="#" class="text-info">Read more...</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link text-dark font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Late Season Frost Threatens Loss of an Entire French Vintage - 15 April 2021
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <p>Many in Western Europe were thrilled with the unusually early warm spring weather. As temperatures hit 82F (28C) in late March, grapes and other crops across France began to flower, kicking off their growing season unseasonably early. But it was only a matter of days before a cold spell struck, and the whole industry was threated by a late-season frost.</p>
+                      <p>Early assessments estimate that as much as 80% of the 2021 crop could be damaged or lost, dealing another devastating blow to an industry still trying to climb back to normalcy post-pandemic. "Even with insurance and governement subsidies, we can't recover from a second year with less than half our typical income," said Jean-Louis Chave of the Hermitage AOC. <a href="#" class="text-info">Read more...</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- FOOTER SECTION -->
+          <footer class="bg-dark py-5">
+            <div class="w-25 mx-auto">
+              <img src="./img/winecierge-logo-white.svg">
+              <nav class="text-white text-center mt-2">
+                <a href="#Top" class="text-white">Back to Top</a>
+              </nav>
+            </div>
+          </footer>
+        </main>
+    </body>
+</html>
