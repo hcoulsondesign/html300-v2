@@ -11,31 +11,23 @@
           <h3 class="font-italic my-4">Senses Important to Wine Tasting</h3>
           <p>The overall assessment of a wine is based on detection of the wine's elements using these four senses:</p>
           <ol>
-            <li>Sight</li>
-            <li>Smell</li>
-            <li>Taste</li>
-            <li>Feel</li>
+            <li v-for="sense in senses" :key="sense">{{sense}}</li>
           </ol>
           <p><small>(Although it can give a hint as to just how sparkling a Champagne is, the fifth sense of hearing is not formally employed in wine tasting.)</small></p>
-          <p>Below are brief descriptions with examples of how each sense is used to evaluate a wine. Click the <span class="text-info font-italic">teal</span> words for a full definition of key wine terms.</p>
+          <p>Below are brief descriptions with examples of how each sense is used to evaluate a wine. Click the <span class="text-primary font-italic">blue</span> words for a full definition of key wine terms.</p>
           <h4 id="Sight">Sight</h4>
           <p>Wine tasters use the physical appearance of a wine to determine whether it meets their expectations of variety and style. This could include comparing the saturation of ruby vs brick-colored hues in a Pinot Noir or assessing the level of clarity in a German Riesling.</p>
           <h4 id="Smell">Smell</h4>
-          <p>There are two main ways that humans detect <span class="text-info font-weight-bold" data-toggle="popover" title="Aroma" data-content="The individual, identifiable scents in a wine that are imparted by the characteristics of the grape">aromas</span> from their surroundings: directly through the nasal cavity <em> and </em> retronasally with the passage of aromatic compounds from the mouth and throat to the olfactory receptor at the back of the nasal cavity. Sense of smell can be used to identify a variety of aromas in wine, such as fruity or floral notes caused by the presence of esters and terpenes, respectively. Together these aromas contribute to the wine's <span class="text-info font-weight-bold" data-toggle="popover" title="Bouquet" data-content="The overall, complex matrix of scents detectable in the glass, resulting from the combination of grape aromas and winemaking practices">bouquet</span>.</p>
-          <p>There are two main ways that humans detect <span v-on:click="showdef('aromas')" class="text-primary">aromas</span> <b-alert v-model="show" dismissible @dismissed="dismissed">{{definition}}</b-alert> from their surroundings: directly through the nasal cavity <em> and </em> retronasally with the passage of aromatic compounds from the mouth and throat to the olfactory receptor at the back of the nasal cavity. Sense of smell can be used to identify a variety of aromas in wine, such as fruity or floral notes caused by the presence of esters and terpenes, respectively. Together these aromas contribute to the wine's <span class="text-info font-weight-bold" data-toggle="popover" title="Bouquet" data-content="The overall, complex matrix of scents detectable in the glass, resulting from the combination of grape aromas and winemaking practices">bouquet</span>.</p>
+          <p>There are two main ways that humans detect <span v-on:click="showdef(aromas)" class="text-primary">aromas</span> aromas from their surroundings: directly through the nasal cavity <em> and </em> retronasally with the passage of aromatic compounds from the mouth and throat to the olfactory receptor at the back of the nasal cavity. Sense of smell can be used to identify a variety of aromas in wine, such as fruity or floral notes caused by the presence of esters and terpenes, respectively. Together these aromas contribute to the wine's <span v-on:click="showdef(bouquet)" class="text-primary">bouquet</span>.</p>
           <h4 id="Taste">Taste</h4>
-          <p>Taste is generally broken down into the 5 key flavors the human <span class="text-info font-weight-bold" data-toggle="popover" title="Palate" data-content="Refers to humans' ability to detect the flavor and textural attributes of a wine in the mouth">palate</span> can detect:</p>
+          <p>Taste is generally broken down into the 5 key flavors the human <span v-on:click="showdef(palate)" class="text-primary">palate</span> can detect:</p>
           <ul>
-            <li>Sweet</li>
-            <li>Sour/Tart</li>
-            <li>Bitter</li>
-            <li>Salty*</li>
-            <li>Umami</li>
+            <li v-for="flavour in tastes" :key="flavour" class="py-0">{{ flavour }}</li>
           </ul>
           <p><small>*Although not common or desirable in wine, salty characters can ocasionally be detected.</small></p>
           <p>So, with only 5 different flavors on the list, how can we taste strawberries and cream in a rosé or chocolate in Merlot? Complex "flavors" that appear in wine (and food) are actually a combined perception of these 5 basic tastes with retronasal olfactory detection. In other words, the ability for humans to smell food and beverages through the back of the throat allows us to detect a myriad of different scent/taste combinations that we perceive as distinct food flavors.</p>
           <h4 id="Feel">Feel</h4>
-          <p>Feel is perhaps one of the most important senses used in wine tasting but also the hardest to master. This is because there is a large number of tactile sensations created by a wine's interaction with the surfaces of the mouth, some of which can be considered either good <em>or</em> bad depending on the intended style of a wine. For example, the spicy, rustic <span class="text-info font-weight-bold" data-toggle="popover" title="Tannin" data-content="macromolecules present in wine that contribute to its color, texture, and long-term shelf stability">tannins</span> that contribute to the <span class="text-info font-weight-bold" data-toggle="popover" title="Mouthfeel" data-content="the physical, textural sensations detected in the mouth during tasting, such as weight, fullness, and length">mouthfeel</span> of a bold Bordeaux red can be a good thing, while the same characteristics are considered undesirable in lighter style reds and white wines such as Pinot Noir and Pinot Gris.</p>
+          <p>Feel is perhaps one of the most important senses used in wine tasting but also the hardest to master. This is because there is a large number of tactile sensations created by a wine's interaction with the surfaces of the mouth, some of which can be considered either good <em>or</em> bad depending on the intended style of a wine. For example, the spicy, rustic <span v-on:click="showdef(tannins)" class="text-primary">tannins</span> that contribute to the <span v-on:click="showdef(mouthfeel)" class="text-primary">mouthfeel</span> of a bold Bordeaux red can be a good thing, while the same characteristics are considered undesirable in lighter style reds and white wines such as Pinot Noir and Pinot Gris.</p>
           <div class="text-center">
             <button v-on:click="show = !show; toggletext()" class="btn-primary mb-3"> {{buttontext}} </button>
           </div>
@@ -66,10 +58,13 @@
     data () {
       return {
         show: false,
-        vocab: [
-          {word: 'aromas', definition: 'The individual, identifiable scents in a wine that are imparted by the characteristics of the grape'},
-          {word: 'bouquet', definition: 'The overall, complex matrix of scents detectable in the glass, resulting from the combination of grape aromas and winemaking practices'}
-        ],
+        senses: ['Sight', 'Smell', 'Taste', 'Feel'],
+        tastes: ['Sweet', 'Sour/Tart', 'Bitter', 'Salty*', 'Umami'],
+        aromas: 'The individual, identifiable scents in a wine that are imparted by the characteristics of the grape',
+        bouquet: 'The overall, complex matrix of scents detectable in the glass, resulting from the combination of grape aromas and winemaking practices',
+        palate: 'Refers to humans\' ability to detect the flavor and textural attributes of a wine in the mouth',
+        tannins: 'macromolecules present in wine that contribute to its color, texture, and long-term shelf stability',
+        mouthfeel: 'the physical, textural sensations detected in the mouth during tasting, such as weight, fullness, and length',
         buttontext: "Show More Info",
         counter: 0
       }
