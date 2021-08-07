@@ -4,7 +4,7 @@
       <!-- MAIN INFO -->
       <div class="row mx-auto my-3 ">
         <div class="col-12 text-center">
-          <h1>Wine Education</h1>
+          <h1>{{ pageTitle }}</h1>
           <h4>Lesson 1</h4>
         </div>
         <div class="col-sm-12 col-md-10 col-xl-8 mx-auto text-start my-3 border border-black">
@@ -28,9 +28,6 @@
           <p>So, with only 5 different flavors on the list, how can we taste strawberries and cream in a rosé or chocolate in Merlot? Complex "flavors" that appear in wine (and food) are actually a combined perception of these 5 basic tastes with retronasal olfactory detection. In other words, the ability for humans to smell food and beverages through the back of the throat allows us to detect a myriad of different scent/taste combinations that we perceive as distinct food flavors.</p>
           <h4 id="Feel">Feel</h4>
           <p>Feel is perhaps one of the most important senses used in wine tasting but also the hardest to master. This is because there is a large number of tactile sensations created by a wine's interaction with the surfaces of the mouth, some of which can be considered either good <em>or</em> bad depending on the intended style of a wine. For example, the spicy, rustic <span v-on:click="showdef(tannins)" class="text-primary">tannins</span> that contribute to the <span v-on:click="showdef(mouthfeel)" class="text-primary">mouthfeel</span> of a bold Bordeaux red can be a good thing, while the same characteristics are considered undesirable in lighter style reds and white wines such as Pinot Noir and Pinot Gris.</p>
-          <div class="text-center">
-            <button v-on:click="show = !show; toggletext()" class="btn-primary mb-3"> {{buttontext}} </button>
-          </div>
         </div>
         <!-- SIDEBAR INFO -->
         <aside v-if="show" class="col-sm-12 col-md-8 col-xl-3 mx-auto my-3 bg-primary text-start text-white">
@@ -47,6 +44,12 @@
             <p>At the highest professional level, panelists may taste and score as many as 10 wines in a flight in the span of a few minutes, which means they taste hundreds of wines in a day!</p>
           </div>
         </aside>
+        <div v-else>
+          <p>There are many interesting aspects to professional wine tasting. Click the button to learn more!</p>
+        </div>
+        <div class="text-center">
+          <button v-on:click="show = !show; toggletext()" class="btn-primary mb-3"> {{buttontext}} </button>
+        </div>
       </div>
     </section>
   </div>
@@ -57,6 +60,7 @@
     name: 'education',
     data () {
       return {
+        pageTitle: 'Wine Education',
         show: false,
         senses: ['Sight', 'Smell', 'Taste', 'Feel'],
         tastes: ['Sweet', 'Sour/Tart', 'Bitter', 'Salty*', 'Umami'],
@@ -65,7 +69,7 @@
         palate: 'Refers to humans\' ability to detect the flavor and textural attributes of a wine in the mouth',
         tannins: 'macromolecules present in wine that contribute to its color, texture, and long-term shelf stability',
         mouthfeel: 'the physical, textural sensations detected in the mouth during tasting, such as weight, fullness, and length',
-        buttontext: "Show More Info",
+        buttontext: "Professional Tasting Info >>",
         counter: 0
       }
     },
@@ -76,10 +80,10 @@
       toggletext: function(){
         this.counter++
         if(this.counter%2 != 0) {
-          this.buttontext = "Hide Sidebar"
+          this.buttontext = "Hide Info"
         }
         else {
-          this.buttontext = "Show More Info"
+          this.buttontext = "Professional Tasting Info >>"
         }
       }
     }
