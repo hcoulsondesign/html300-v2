@@ -3,7 +3,9 @@
     <mainheader msg="Helping you plan your next wine experience"/>
     <div class="bg-danger text-white py-2" id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/education">Education</router-link> |
+      <router-link to="/news">News</router-link>
     </div>
     <router-view/>
     <mainfooter msg="test"/>
