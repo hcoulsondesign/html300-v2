@@ -8,6 +8,7 @@
         </div>
 
         <div class="accordion" role="tablist">
+          <!-- for every story in the object, toggle between showing content and hiding it each time user clicks -->
           <b-card v-for="(story, key) in this.stories" :key="key" no-body class="my-2">
             <b-card-header header-tag="header" class="pt-2 pb-0" role="tab">
               <b-button block v-b-toggle="'accordion-'+key" variant="light">
