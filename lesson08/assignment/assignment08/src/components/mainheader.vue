@@ -1,3 +1,4 @@
+<!-- mainheader component modified to use slots instead of props -->
 <template>
   <div class="mainheader">
     <div class="bg-dark">
@@ -16,10 +17,7 @@
 
 <script>
 export default {
-  name: 'mainheader',
-  props: {
-    msg: String
-  }
+  name: 'mainheader'
 }
 </script>
 

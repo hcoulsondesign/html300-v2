@@ -20,6 +20,7 @@
       <!-- use v-for to loop through the image array and display using flexbox -->
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div v-for="(pic, i) in pics" :key="i" class="col-sm-12 col-lg-5 m-3">
+          <!-- imported image component -->
           <gallery :image-data="pic"/>
         </div>
       </div>
@@ -38,7 +39,7 @@ export default {
   data () {
     return {
       pageTitle: 'About Winecierge',
-      pics: [
+      pics: [ //image object with props passed to child component
         {
           'img_src': require('@/assets/gallery/dont-rush.jpg'),
           'alt': 'A young woman unpacks wine from a picnic basket in front of rows of grapes in front of a background of vineyards and Red Mountain',
@@ -76,14 +77,6 @@ export default {
           'description': 'With advance reservations, guests to a winery can enjoy a tasting among the oak barrels led by the winemaker'
         }
       ]
-    //   pictures: [ //image array
-    //   {img: require("@/assets/gallery/dont-rush.jpg")},
-    //   {img: require("@/assets/gallery/vines-sky.jpg")},
-    //   {img: require("@/assets/gallery/wahluke-slope.jpg")},
-    //   {img: require("@/assets/gallery/sauv-blanc.jpg")},
-    //   {img: require("@/assets/gallery/charcuterie.jpg")},
-    //   {img: require("@/assets/gallery/tasting-setting.jpg")}
-    // ]
     }
   }
 }
